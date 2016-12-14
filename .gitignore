@@ -37,7 +37,7 @@ templates.js
 !dev/*.css
 
 # prevent js/*.js (as they are distribution files)
-src/js/*.js
+/js/*.js
 
 
 # prevent the .map

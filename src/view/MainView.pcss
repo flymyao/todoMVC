@@ -1,0 +1,89 @@
+@import "../pcss/utils.pcss";
+
+.MainView {
+
+    .navbar {
+        width: 100%;
+        background: none;
+        border: none;
+        border-bottom: solid 1px $bdr-gray;
+        height: auto;
+        border-radius: 0px;
+        .navbar-brand {
+            font-weight: 200;
+            color: $txt-blue;
+            font-size: 24px;
+            letter-spacing: .1em;
+        }
+
+        a {
+            letter-spacing: .1em;
+            margin-right: 32px;
+            padding: 8px;
+            small {
+                font-size: .8em;
+            }
+        }
+        .active a {
+            background: #eee;
+            width: 100%;
+            border-radius: 4px;
+        }
+    }
+
+    .nav-left {
+        white-space: nowrap;
+        width: 200px;
+        min-height: 600px;
+        border-right: solid 2px #ccc;
+
+        .head{
+            border-bottom: 1px solid #CCC;
+            text-align: center;
+            height: 32px;
+            line-height: 32px;
+        }
+        .title{
+            font-size: 16px;
+            color: $txt-light;
+        }
+
+        .project-list{
+            .item{
+                height: 32px;
+                line-height: 32px;
+                border-bottom: 1px solid #CCC;
+                padding-left: 16px;
+                .name{
+                    cursor: pointer;
+                }
+                .delete{
+                    float: right;
+                    line-height: 32px;
+                    margin-right: 16px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .foot{
+            bottom: 0px;
+            position: absolute;
+            text-align: center;
+            width: 200px;
+            border-top: 1px solid #CCC;
+            height: 32px;
+            line-height: 32px;
+            cursor: pointer;
+        }
+
+    }
+
+    section.content {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        bottom: 0;
+        left: 240px;
+    }
+
+}

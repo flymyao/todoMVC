@@ -13,7 +13,7 @@ if (port === undefined) {
 // Depending on the properties, it will be used for the connection properties or 
 var defaultCfg = {
     port: port,				    // connection port
-    clientRoot: "src/" // root of the client files (which will be served statically)
+    clientRoot: "" // root of the client files (which will be served statically)
 };
 
 // App is a simple convenience Hapi/Server wrapper. 

@@ -10,42 +10,50 @@ d.register("MainView",{
 	},
 
 	events: {
+		"click; .add-project":function(){
+			var view = this;
+			$(d.first("#modal-add-project")).modal();
+		},
+		"click; .add-ok":function(){
+			var view = this;
+			var nameEl = d.first(view.el,"input.name");
+			if(nameEl.value){
+				projectHub.pub("Project", "create", {name: nameEl.value});
+				nameEl.value = "";
+				$(d.first("#modal-add-project")).modal("hide");
+			}
+		},
+		"click; .item .delete":function(evt){
+			var view = this;
+			var targetEl = evt.target;
+			var id = d.closest(targetEl, ".item").getAttribute("data-entity-id");
+			projectHub.pub("Project", "delete", id);
+		}
 	},
 
 	docEvents: {
 
 	},
 	winEvents:{
-		"hashchange":function(){
-			var view = this;
-			var hash = getSection.call(view);
-			showView.call(view, hash);
-		}
+
 	},
 	hubEvents: {
+		"projectHub": {
+			// subscribe on the dataServiceHub on the topic Task and any labels "create" "update" or "delete"
+			"Project; create, delete": function(data, info){
+				var view = this; // the this is this view object
+				console.log("Project has been " + info.label + "d");
+				refreshItems.call(view);
+			}
+		}
 	}
 });
 
-function getSection(){
+function refreshItems(){
 	var view = this;
-	var hash = window.location.hash;
-	if(hash.startsWith("#") > -1){
-		hash = hash.substring(1);
-	}
-
-	var $nav = view.$el.find(".nav.navbar-nav");
-	$nav.find("li").removeClass("active");
-	$nav.find("li a[href='#"+hash+"']").closest("li").addClass("active");
-	return hash;
+	var listEl = d.first(view.el,".project-list");
+	var data = projectHub.getData();
+	var html = render("List-items", {projects: data});
+	listEl.innerHTML = html;
 }
 
-function showView(section){
-	var view = this;alert(section)
-	if(section == "sub1"){
-		b.display("Sub1View");
-	}else if(section == "sub2"){
-		b.display("Sub2View");
-	}else{
-		b.display("Sub1View");
-	}
-}

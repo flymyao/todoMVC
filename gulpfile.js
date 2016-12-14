@@ -30,8 +30,8 @@ var processors = [
 ];
 // --------- /postcss require --------- //
 
-var jsDir = path.join(webappDir,"src/js/");
-var cssDir = path.join(webappDir,"src/css/");
+var jsDir = path.join(webappDir,"js/");
+var cssDir = path.join(webappDir,"css/");
 
 gulp.task('default',['clean', 'pcss', 'tmpl', 'lib-bundle', 'app-bundle']);
 
