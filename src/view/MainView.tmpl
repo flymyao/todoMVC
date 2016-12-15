@@ -1,51 +1,28 @@
 <script type="text/html" id="MainView">
     <div class="MainView">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">todoMVC</a>
+        <header>
+            <div class="inner">
+                <span class="logo">projectMVC</span>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="user">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="dx" data-dx="username"></span><b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="do-logoff">Logoff</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
             </div>
-        </nav>
+        </header>
 
-        <div class="nav-left">
-            <div class="head title">Projects</div>
-            <div class="project-list">
-
+        <section class="MainView-frame">
+            <div class="inner">
+                <div class="MainView-left"></div>
+                <div class="MainView-content"></div>
             </div>
-            <div class="foot title add-project">
-                <span class="glyphicon glyphicon-plus"></span>
-                <span>Add Project</span>
-            </div>
-        </div>
-
-        <section class="content">
-
         </section>
-
-        <div class="modal fade" id="modal-add-project" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="modal-title" id="myModalLabel">Add Project</h4>
-                    </div>
-                    <div class="modal-body">
-                        <input type="text" class="form-control name" placeholder="name">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary add-ok">OK</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-</script>
-
-<script id="List-items" type="text/html">
-    {{#each projects}}
-    <div class="item" data-entity-id="{{id}}">
-        <span class="name">{{name}}</span>
-        <span class="glyphicon glyphicon-remove delete"></span>
-    </div>
-    {{/each}}
 </script>
 

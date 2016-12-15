@@ -10,7 +10,15 @@ d.register("LoginView",{
     },
 
     events: {
-
+        "click; .do-login":function(){
+            var user = d.pull(d.first(".LoginView"))
+            app.doGet("/api/login",user).done(function(data){
+                if(data){
+                    app.preference.store("user",JSON.stringify(user));
+                    window.location.reload();
+                }
+            });
+        }
     },
 
     docEvents: {

@@ -2,6 +2,7 @@
 
 const Hapi = require('hapi');
 const Inert = require('inert');
+const HapiAsync = require('./utils.js').HapiAsync;
 const run = require('async6').run;
 
 var port = process.argv[2];
@@ -67,6 +68,7 @@ function initServer() {
     this.server = new Hapi.Server();
 
     // register plugins
+    this.server.register(HapiAsync, function() {});
     this.server.register(Inert, function () {
     });
 
@@ -90,6 +92,9 @@ function initServer() {
             }
         }
     });
+
+    // bind APIs
+    this.load(require('./api/api-user.js'));
 }
 // --------- /App Private Methods --------- //
 
