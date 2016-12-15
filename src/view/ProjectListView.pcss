@@ -1,6 +1,9 @@
 @import "../pcss/utils.pcss";
 
 .ProjectListView{
+    display: flex;
+    flex: 1;
+    flex-flow: column;
     .head{
         border-bottom: 1px solid #CCC;
         text-align: center;
@@ -13,6 +16,9 @@
     }
 
     .project-list{
+        display: flex;
+        flex: 1;
+        flex-flow: column;
         .item{
             height: 32px;
             line-height: 32px;
@@ -30,10 +36,8 @@
         }
     }
     .foot{
-        bottom: 0px;
-        position: absolute;
+        justify-content: flex-end;
         text-align: center;
-        width: 200px;
         border-top: 1px solid #CCC;
         height: 32px;
         line-height: 32px;

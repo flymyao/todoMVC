@@ -10,27 +10,34 @@
 
         .inner{
             flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
         }
 
         .logo{
-            display: block;
-            float: left;
+            display: flex;
             margin-top: 8px;
             margin-left: 16px;
             font-size: 24px;
             color: $txt-blue;
         }
         .user{
-            float: right;
+            display: flex;
+            .dropdown-toggle{
+                margin-left: 86px;
+            }
         }
     }
 
     .MainView-frame{
+        display: flex;
+        flex: 1;
         .inner{
             flex-grow: 1;
             display: flex;
             flex-direction: row;
             .MainView-left{
+                display: flex;
                 width: 180px;
                 border-right: 1px solid #CCC;
             }
