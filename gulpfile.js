@@ -100,20 +100,11 @@ gulp.task('lib-bundle', function() {
 
 // app bundle is the javascripts view js and application common code that are used in the app
 gulp.task('app-bundle', function() {
-
-	return browserify({entries: files(["src/js-app/","src/view/"], ".js"), debug: true})
-		.bundle()
-		.pipe(source('app-bundle.js'))
-		.pipe(buffer())
-		.pipe(sourcemaps.init({loadMaps: true}))
+	gulp.src([path.join(webappDir,"src/js-app/*.js"), path.join(webappDir,"src/view/*.js")])
+		.pipe(sourcemaps.init())
+		.pipe(concat("app-bundle.js"))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(jsDir));
-
-	// gulp.src([path.join(webappDir,"src/js-app/*.js"), path.join(webappDir,"src/view/*.js")])
-	// 	.pipe(sourcemaps.init())
-	// 	.pipe(concat("app-bundle.js"))
-	// 	.pipe(sourcemaps.write('./'))
-	// 	.pipe(gulp.dest(jsDir));
 });
 
 // --------- /Web Assets Processing --------- //
