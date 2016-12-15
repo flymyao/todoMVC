@@ -1,0 +1,39 @@
+<script type="text/html" id="ProjectListView">
+    <div class="ProjectListView">
+        <div class="head title">Projects</div>
+        <div class="project-list">
+
+        </div>
+        <div class="foot title add-project">
+            <span class="glyphicon glyphicon-plus"></span>
+            <span>Add Project</span>
+        </div>
+
+        <div class="modal fade" id="modal-add-project" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myModalLabel">Add Project</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control name" placeholder="name">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary add-ok">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="List-items" type="text/html">
+    {{#each projects}}
+    <div class="item" data-entity-id="{{id}}">
+        <span class="name">{{name}}</span>
+        <span class="glyphicon glyphicon-remove delete"></span>
+    </div>
+    {{/each}}
+</script>
+

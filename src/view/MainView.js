@@ -5,7 +5,10 @@ d.register("MainView",{
 	create: function(){
 		return render("MainView");
 	},
-
+	init: function(){
+		var view = this;
+		d.display("ProjectListView",d.first(view.el,".MainView-left"));
+	},
 	postDisplay: function(){
 		var view = this;
 		view.$contentPanel = d.first(".MainView-content");
