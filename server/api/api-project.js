@@ -28,7 +28,7 @@ routes.push({
     method: 'POST',
     path:'/project/delete',
     handler: function (request, reply) {
-        var projectDao = daos.perject;
+        var projectDao = daos.project;
         var entityId = projectDao.delete(request.payload.id);
         reply({success: true,result: entityId});
     }

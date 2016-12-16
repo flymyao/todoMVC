@@ -37,8 +37,7 @@ class BaseDao{
 		var entity = Object.assign({}, dataEntity);
 		entity["id"] = getSeq.call(this);
 		this._cache.push(entity);
-		var file_name = "./server/data/" + this._entity + ".json";
-		file_store.write(file_name,this._cache)
+		refreshDataFile(this._entity,this._cache);
 		return entity.id;
 	}
 
@@ -61,6 +60,7 @@ class BaseDao{
 				var obj = this._cache[i];
 				if(obj.id == parseInt(key)){
 					this._cache.splice(i, 1);
+					refreshDataFile(this._entity,this._cache);
 				}
 			}
 		}
@@ -75,6 +75,11 @@ class BaseDao{
 
 function getSeq(){
 	return this._seq++;
+}
+
+function refreshDataFile(entity,cache){
+	var file_name = "./server/data/" + entity + ".json";
+	file_store.write(file_name,cache);
 }
 
 // --------- /BaseDao Utilities --------- //
