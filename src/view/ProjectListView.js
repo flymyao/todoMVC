@@ -8,6 +8,7 @@ d.register("ProjectListView",{
 
     postDisplay: function(){
         var view = this;
+        refreshItems.call(view);
     },
 
     events: {
@@ -53,8 +54,10 @@ d.register("ProjectListView",{
 function refreshItems(){
     var view = this;
     var listEl = d.first(view.el,".project-list");
-    var data = projectHub.getData();
-    var html = render("List-items", {projects: data});
-    listEl.innerHTML = html;
+
+    projectHub.list().done(function(data){
+        var html = render("List-items", {projects: data});
+        listEl.innerHTML = html;
+    });
 }
 

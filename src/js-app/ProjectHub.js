@@ -2,7 +2,7 @@ var d = mvdom;
 
 var projectHub = d.hub("projectHub");
 var _projects = [];
-var _id = 1;
+var app = app || {};
 
 // Subcribe to a topic 
 // sub(topic,[labels,] handlerFunction, namespace) 
@@ -12,28 +12,17 @@ projectHub.sub("Project",function(data, info){
 
 // or can subscribe only to the create label (here info.label will always be "create") 
 projectHub.sub("Project", "create", function(data, info){
-	data.id = getSeq();
-	_projects.push(data);
+	data = data || {};
+	return app.doPost("/project/create", {entity: JSON.stringify(data)});
 });
 
 // or can subscribe only to the delete label (here info.label will always be "delete")
 projectHub.sub("Project", "delete", function(data, info){
-	var id = data;
-	if(id){
-		for(var i = 0; i < _projects.length; i++){
-			if(_projects[i].id == id){
-				_projects.splice(i, 1);
-			}
-		}
-	}
+	return app.doPost("/project/delete", {id: data});
 });
 
-projectHub.getData = function(){
-	return _projects;
-}
-
-function getSeq(){
-	return _id++;
+projectHub.list =  function(){
+	return app.doGet("/project/list");
 }
 
 

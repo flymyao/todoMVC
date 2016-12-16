@@ -6,7 +6,7 @@ module.exports = routes;
 
 routes.push({
     method: 'GET',
-    path:'/api/login',
+    path:'/user/login',
     handler: {
         async: function* (request, reply) {
             var result = null;
@@ -31,7 +31,7 @@ routes.push({
 
 routes.push({
     method: 'GET',
-    path:'/api/get-user',
+    path:'/user/get-user',
     handler: {
         async: function* (request, reply) {
             var result = null;
