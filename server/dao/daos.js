@@ -3,5 +3,6 @@ var BaseDao = require("./BaseDao.js");
 
 module.exports = {
     BaseDao: BaseDao,
-    project: new BaseDao("project")
+    project: new BaseDao("project"),
+    task: new BaseDao("task")
 };

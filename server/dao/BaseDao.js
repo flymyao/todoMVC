@@ -68,7 +68,8 @@ class BaseDao{
 
 	list(){
 		return Object.assign([], this._cache);
-	}	
+	}
+
 }
 
 // --------- BaseDao Utilities --------- //

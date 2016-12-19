@@ -1,0 +1,47 @@
+@import "../pcss/utils.pcss";
+
+.ProjectView{
+    display: flex;
+    flex: 1;
+    flex-flow: column;
+    .head{
+        border-bottom: 1px solid #CCC;
+        text-align: center;
+        height: 32px;
+        line-height: 32px;
+    }
+    .title{
+        font-size: 16px;
+        color: $txt-light;
+    }
+
+    .task-list{
+        display: flex;
+        flex: 1;
+        flex-flow: column;
+        overflow: auto;
+        .item{
+            height: 32px;
+            line-height: 32px;
+            border-bottom: 1px solid #CCC;
+            padding-left: 16px;
+            .name{
+                cursor: pointer;
+            }
+            .delete{
+                float: right;
+                line-height: 32px;
+                margin-right: 16px;
+                cursor: pointer;
+            }
+        }
+    }
+    .foot{
+        justify-content: flex-end;
+        text-align: center;
+        border-top: 1px solid #CCC;
+        height: 32px;
+        line-height: 32px;
+        cursor: pointer;
+    }
+}
