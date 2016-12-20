@@ -14,3 +14,19 @@ $bkg-lighter: #f0f0f0;
 $bkg-light: #aaa;
 
 /* --------- /Variables --------- */
+
+@define-mixin clearfix{
+  &:before,
+  &:after {
+      content: " ";
+      display: table;
+  }
+  &:after {
+      clear: both;
+  }
+}
+
+@define-mixin fitparent{
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+}

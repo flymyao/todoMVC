@@ -32,6 +32,10 @@ d.register("ProjectView",{
             var targetEl = evt.target;
             var id = d.closest(targetEl, ".item").getAttribute("data-entity-id");
             taskHub.pub("Task", "delete", id);
+        },
+        "click; .edit-project":function(){
+            var view = this;
+            d.display("ProjectPopup", d.first("body"), {id: view._projectId});
         }
     },
 
@@ -44,7 +48,7 @@ d.register("ProjectView",{
     hubEvents: {
         "taskHub": {
             // subscribe on the dataServiceHub on the topic Task and any labels "create" "update" or "delete"
-            "Task; create, delete": function(data, info){
+            "Task; create, delete ,update": function(data, info){
                 var view = this; // the this is this view object
                 console.log("Task has been " + info.label + "d");
                 refreshTasks.call(view);
