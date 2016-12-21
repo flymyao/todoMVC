@@ -20,6 +20,15 @@ taskHub.sub("Task", "delete", function(data, info){
 	return app.doPost("/task/delete", {id: data});
 });
 
+taskHub.sub("Task", "update", function (data, info) {
+	data = data || {};
+	return app.doPost("/task/update", {entity: JSON.stringify(data)});
+});
+
+taskHub.get = function (id) {
+	return app.doGet("/task/get", {id: id});
+}
+
 taskHub.list =  function(projectId){
 	return app.doGet("/task/list",{projectId:projectId});
 }

@@ -36,6 +36,12 @@ d.register("ProjectView",{
         "click; .edit-project":function(){
             var view = this;
             d.display("ProjectPopup", d.first("body"), {id: view._projectId});
+        },
+        "click; .edit-task":function(evt){
+            var view = this;
+            var targetEl = evt.target;
+            var id = d.closest(targetEl, ".item").getAttribute("data-entity-id");
+            d.display("TaskPopup", d.first("body"), {id:id});
         }
     },
 

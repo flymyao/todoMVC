@@ -1,10 +1,10 @@
 var d = mvdom;
 
-d.register("ProjectPopup", {
+d.register("TaskPopup", {
     // Returns a HTML String or a HTML Element
     // Must be one parent element
     create: function (data, config) {
-        return render("ProjectPopup");
+        return render("TaskPopup");
     },
 
     // (optional) postDisplay() will be called after the component element is added to the dom
@@ -15,15 +15,15 @@ d.register("ProjectPopup", {
         var view = this;
         data = data || {};
         view.objId = data.id;
-        projectHub.get(view.objId).done(function (result) {
-            loadProject.call(view, result);
+        taskHub.get(view.objId).done(function (result) {
+            loadTask.call(view, result);
         });
     },
 
     events: {
         "click; .btn.save": function () {
             var view = this;
-            projectHub.pub("Project", "update", getProjectData.call(view));
+            taskHub.pub("Task", "update", getTaskData.call(view));
             d.remove(view.el);
         },
         "click; .btn.cancel": function () {
@@ -35,7 +35,7 @@ d.register("ProjectPopup", {
 });
 
 
-function getProjectData() {
+function getTaskData() {
     var view = this;
     var props = {};
     props.id = view.objId;
@@ -43,13 +43,9 @@ function getProjectData() {
     return props;
 }
 
-function loadProject(project) {
+function loadTask(task) {
     var view = this;
-    if (project.name) {
-        d.first(view.el, "input[name='name']").value = project.name;
-    }
-
-    if (project.done) {
-        d.first(view.el, "input[name='done']").checked = true;
+    if (task.name) {
+        d.first(view.el, "input[name='name']").value = task.name;
     }
 }
