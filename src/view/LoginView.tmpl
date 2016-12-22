@@ -1,28 +1,209 @@
-<script id="LoginView" type="text/html">
-    <div class="LoginView">
-        <div class="modal fade in" style="display:block;margin-top: 160px;overflow: hidden">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Log In</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <input name="username" type="text" class="form-control dx"  autofocus placeholder="Name">
+<div class="tang-foreground" id="TANGRAM__PSP_2__foreground" style="width: 393px;">
+    <div class="tang-title tang-title-dragable" id="TANGRAM__PSP_2__title">
+        <span id="TANGRAM__PSP_2__titleText">登录</span></div>
+    <div class="tang-body" id="TANGRAM__PSP_2__body">
+        <div class="tang-content" id="TANGRAM__PSP_2__content">
+            <div id="passport-login-pop-dialog">
+                <div class="clearfix">
+                    <div class="pass-login-pop-content" id="">
+                        <div class="pass-login-pop-form">
+                            <div id="passport-login-pop-api" class="tang-pass-login">
+                                <form id="TANGRAM__PSP_8__form" class="pass-form pass-form-normal" method="POST"
+                                      autocomplete="off"><p id="TANGRAM__PSP_8__errorWrapper"
+                                                            class="pass-generalErrorWrapper"><span
+                                        id="TANGRAM__PSP_8__error"
+                                        class="pass-generalError pass-generalError-error"></span></p>
+
+                                    <p id="TANGRAM__PSP_8__MakeTextWrapper" class="pass-make-text"
+                                       style="display:none;"></p>
+
+                                    <p class="pass-smsSwitchWrapper" id="TANGRAM__PSP_8__smsSwitchWrapper"><a
+                                            class="pass-sms-btn" title="短信快捷登录" data-type="sms"
+                                            id="TANGRAM__PSP_8__smsSwitch">短信快捷登录</a></p>
+
+                                    <p id="TANGRAM__PSP_8__userNameWrapper"
+                                       class="pass-form-item pass-form-item-userName" style="display:"><label
+                                            for="TANGRAM__PSP_8__userName" id="TANGRAM__PSP_8__userNameLabel"
+                                            class="pass-label pass-label-userName">手机/邮箱/用户名</label><input
+                                            id="TANGRAM__PSP_8__userName" type="text" name="userName"
+                                            class="pass-text-input pass-text-input-userName open" autocomplete="off"
+                                            placeholder="手机/邮箱/用户名"><span id="TANGRAM__PSP_8__userName_clearbtn"
+                                                                          class="pass-clearbtn pass-clearbtn-userName"
+                                                                          style="display: none; visibility: hidden; opacity: 1;"></span><span
+                                            id="TANGRAM__PSP_8__userNameTip"
+                                            class="pass-item-tip pass-item-tip-userName" style="display:none"><span
+                                            id="TANGRAM__PSP_8__userNameTipText"
+                                            class="pass-item-tiptext pass-item-tiptext-userName"></span></span>
+                                    <span class="pass-item-selectbtn pass-item-selectbtn-userName"
+                                          style="display: none; visibility: hidden; opacity: 1;"></span></p><p
+                                            id="TANGRAM__PSP_8__passwordWrapper"
+                                            class="pass-form-item pass-form-item-password" style="display:"><label
+                                            for="TANGRAM__PSP_8__password" id="TANGRAM__PSP_8__passwordLabel"
+                                            class="pass-label pass-label-password">密码</label><input
+                                            id="TANGRAM__PSP_8__password" type="password" name="password"
+                                            class="pass-text-input pass-text-input-password" placeholder="密码"><span
+                                            id="TANGRAM__PSP_8__password_clearbtn"
+                                            class="pass-clearbtn pass-clearbtn-password"
+                                            style="display: none; visibility: hidden;"></span><span
+                                            id="TANGRAM__PSP_8__passwordTip"
+                                            class="pass-item-tip pass-item-tip-password" style="display:none"><span
+                                            id="TANGRAM__PSP_8__passwordTipText"
+                                            class="pass-item-tiptext pass-item-tiptext-password"></span></span></p>
+
+                                    <p id="TANGRAM__PSP_8__verifyCodeImgWrapper"
+                                       class="pass-form-item pass-form-item-verifyCode"
+                                       style="display: block; visibility: visible; opacity: 1;"><label
+                                            for="TANGRAM__PSP_8__verifyCode" id="TANGRAM__PSP_8__verifyCodeLabel"
+                                            class="pass-label pass-label-verifyCode">验证码</label><input
+                                            id="TANGRAM__PSP_8__verifyCode" type="text" name="verifyCode"
+                                            class="pass-text-input pass-text-input-verifyCode" maxlength="6"
+                                            placeholder="验证码"><span id="TANGRAM__PSP_8__verifyCode_clearbtn"
+                                                                    class="pass-clearbtn pass-clearbtn-verifyCode"
+                                                                    style="display: none; visibility: hidden;"></span><span
+                                            id="TANGRAM__PSP_8__verifyCodeImgParent"
+                                            class="pass-verifyCodeImgParent"><img id="TANGRAM__PSP_8__verifyCodeImg"
+                                                                                  class="pass-verifyCode"
+                                                                                  src="https://passport.baidu.com/cgi-bin/genimage?njG0e06de7f9235f59502be146ba60188003eff5b0676048a98"></span><a
+                                            id="TANGRAM__PSP_8__verifyCodeChange" href="#"
+                                            class="pass-change-verifyCode">换一张</a><span
+                                            id="TANGRAM__PSP_8__verifyCodeError"
+                                            class="pass-error pass-error-verifyCode"></span><span
+                                            id="TANGRAM__PSP_8__verifyCodeTip"
+                                            class="pass-tip pass-tip-verifyCode"></span><span
+                                            id="TANGRAM__PSP_8__verifyCodeSuccess"
+                                            class="pass-success pass-success-verifyCode"
+                                            style="display: none; visibility: hidden;"></span></p>
+
+                                    <p id="TANGRAM__PSP_8__memberPassWrapper"
+                                       class="pass-form-item pass-form-item-memberPass"><input
+                                            id="TANGRAM__PSP_8__memberPass" type="checkbox" name="memberPass"
+                                            class="pass-checkbox-input pass-checkbox-memberPass"
+                                            checked="checked"><label for="TANGRAM__PSP_8__memberPass"
+                                                                     id="TANGRAM__PSP_8__memberPassLabel" class="">下次自动登录</label>
+                                    </p>
+
+                                    <p id="TANGRAM__PSP_8__submitWrapper" class="pass-form-item pass-form-item-submit">
+                                        <input id="TANGRAM__PSP_8__submit" type="submit" value="登录"
+                                               class="pass-button pass-button-submit"><a class="pass-reglink"
+                                                                                         href="https://passport.baidu.com/v2/?reg&amp;tt=1482387449932&amp;gid=8CE28C8-DE37-4C01-866D-0727F019BF5E&amp;tpl=mn&amp;u=https%3A%2F%2Fwww.baidu.com%2Fs%3Fie%3Dutf-8%26f%3D3%26rsv_bp%3D1%26rsv_idx%3D1%26tn%3Dbaidu%26wd%3D%25E7%2599%25BB%25E9%2599%2586%25E7%2595%258C%25E9%259D%25A2%2520app%26oq%3D%25E7%2599%25BB%25E9%2599%2586%25E7%2595%258C%25E9%259D%25A2%26rsv_pq%3De324f9c100001544%26rsv_t%3Dd0f0aX2NZ1DSTbGiuhWUejT6eLFhRSMKw0djrYhL%252FoSCM%252FP3WdISeHYFWPo%26rqlang%3Dcn%26rsv_enter%3D0%26prefixsug%3D%25E7%2599%25BB%25E9%2599%2586%25E7%2595%258C%25E9%259D%25A2%2520app%26rsp%3D3"
+                                                                                         target="_blank">立即注册</a><a
+                                            class="pass-fgtpwd"
+                                            href="https://passport.baidu.com/?getpassindex&amp;tt=1482387449932&amp;gid=8CE28C8-DE37-4C01-866D-0727F019BF5E&amp;tpl=mn&amp;u=https%3A%2F%2Fwww.baidu.com%2Fs%3Fie%3Dutf-8%26f%3D3%26rsv_bp%3D1%26rsv_idx%3D1%26tn%3Dbaidu%26wd%3D%25E7%2599%25BB%25E9%2599%2586%25E7%2595%258C%25E9%259D%25A2%2520app%26oq%3D%25E7%2599%25BB%25E9%2599%2586%25E7%2595%258C%25E9%259D%25A2%26rsv_pq%3De324f9c100001544%26rsv_t%3Dd0f0aX2NZ1DSTbGiuhWUejT6eLFhRSMKw0djrYhL%252FoSCM%252FP3WdISeHYFWPo%26rqlang%3Dcn%26rsv_enter%3D0%26prefixsug%3D%25E7%2599%25BB%25E9%2599%2586%25E7%2595%258C%25E9%259D%25A2%2520app%26rsp%3D3"
+                                            target="_blank">登录遇到问题</a></p></form>
+                            </div>
+                            <div id="TANGRAM__PSP_8__sms" class="tang-pass-login tang-pass-sms" style="display:none"><p
+                                    class="tang-pass-sms-title">短信登录</p>
+
+                                <p class="tang-pass-sms-tip">验证即登录，未注册将自动创建百度帐号</p>
+
+                                <form id="TANGRAM__PSP_8__smsForm" method="POST"><p id="TANGRAM__PSP_8__smsHiddenFields"
+                                                                                    style="display:none"><input
+                                        type="hidden" id="TANGRAM__PSP_8__smsHiddenFields_u" name="u"
+                                        value="https://www.baidu.com/s?ie=utf-8&amp;f=3&amp;rsv_bp=1&amp;rsv_idx=1&amp;tn=baidu&amp;wd=%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2%20app&amp;oq=%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2&amp;rsv_pq=e324f9c100001544&amp;rsv_t=d0f0aX2NZ1DSTbGiuhWUejT6eLFhRSMKw0djrYhL%2FoSCM%2FP3WdISeHYFWPo&amp;rqlang=cn&amp;rsv_enter=0&amp;prefixsug=%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2%20app&amp;rsp=3"><input
+                                        type="hidden" id="TANGRAM__PSP_8__smsHiddenFields_staticPage" name="staticPage"
+                                        value="https://www.baidu.com/cache/user/html/v3Jump.html"><input type="hidden"
+                                                                                                         id="TANGRAM__PSP_8__smsHiddenFields_tpl"
+                                                                                                         name="tpl"
+                                                                                                         value="mn"><input
+                                        type="hidden" id="TANGRAM__PSP_8__smsHiddenFields_idc" name="idc"
+                                        value=""><input type="hidden" id="TANGRAM__PSP_8__smsHiddenFields_isdpass"
+                                                        name="isdpass" value="1"><input type="hidden"
+                                                                                        id="TANGRAM__PSP_8__smsHiddenFields_gid"
+                                                                                        name="gid"
+                                                                                        value="8CE28C8-DE37-4C01-866D-0727F019BF5E"><input
+                                        type="hidden" id="TANGRAM__PSP_8__smsHiddenFields_switchuname"
+                                        name="switchuname" value=""><input type="hidden"
+                                                                           id="TANGRAM__PSP_8__smsHiddenFields_smsCodeString"
+                                                                           name="smsCodeString" value=""><input
+                                        type="hidden" id="TANGRAM__PSP_8__smsHiddenFields_smsVcodesign"
+                                        name="smsVcodesign" value=""><input type="hidden"
+                                                                            id="TANGRAM__PSP_8__smsHiddenFields_smsVcodestr"
+                                                                            name="smsVcodestr" value=""><input
+                                        type="hidden" id="TANGRAM__PSP_8__smsHiddenFields_subpro" name="subpro"
+                                        value=""><input type="hidden" id="TANGRAM__PSP_8__smsHiddenFields_is_voice_sms"
+                                                        name="is_voice_sms" value="0"><input type="hidden"
+                                                                                             id="TANGRAM__PSP_8__smsHiddenFields_voice_sms_flag"
+                                                                                             name="voice_sms_flag"
+                                                                                             value="0"></p>
+
+                                    <p id="TANGRAM__PSP_8__smsErrorWrapper" class="pass-generalErrorWrapper"><span
+                                            id="TANGRAM__PSP_8__smsError" class="pass-generalError"></span></p>
+
+                                    <div id="TANGRAM__PSP_8__smsPhoneWrapper"
+                                         class="pass-form-item pass-form-item-smsPhone"><label
+                                            for="TANGRAM__PSP_8__smsPhone" id="TANGRAM__PSP_8__smsPhoneLabel"
+                                            class="pass-label pass-label-smsPhone" data-countrycode="">手机号</label><input
+                                            id="TANGRAM__PSP_8__smsPhone" type="text" name="username"
+                                            class="pass-text-input pass-text-input-smsPhone" placeholder="请输入手机号"><span
+                                            id="TANGRAM__PSP_8__smsPhone_clearbtn"
+                                            class="pass-clearbtn pass-clearbtn-smsPhone"
+                                            style="display:none;"></span><span id="TANGRAM__PSP_8__smsPhoneTip"
+                                                                               class="pass-item-tip pass-item-tip-smsPhone"
+                                                                               style="display:none"><span
+                                            id="TANGRAM__PSP_8__smsPhoneTipText"></span></span></div>
+                                    <p id="TANGRAM__PSP_8__smsVerifyCodeWrapper"
+                                       class="pass-form-item pass-form-item-smsVerifyCode"><label
+                                            for="TANGRAM__PSP_8__smsVerifyCode" id="TANGRAM__PSP_8__smsVerifyCodeLabel"
+                                            class="pass-label pass-label-smsVerifyCode">动态密码</label><input
+                                            id="TANGRAM__PSP_8__smsVerifyCode" type="text" name="password"
+                                            class="pass-text-input pass-text-input-smsVerifyCode"
+                                            placeholder="动态密码"><span id="TANGRAM__PSP_8__smsVerifyCode_clearbtn"
+                                                                     class="pass-clearbtn pass-clearbtn-smsVerifyCode"
+                                                                     style="display:none;"></span>
+                                        <button id="TANGRAM__PSP_8__smsTimer" class="pass-item-timer">发送动态密码</button>
+                                        <span id="TANGRAM__PSP_8__smsVerifyCodeTip"
+                                              class="pass-item-tip pass-item-tip-smsVerifyCode"
+                                              style="display:none"><span
+                                                id="TANGRAM__PSP_8__smsVerifyCodeTipText"></span></span></p>
+                                    <p id="TANGRAM__PSP_8__smsSubmitWrapper"
+                                       class="pass-form-item pass-form-item-submit"><input
+                                            id="TANGRAM__PSP_8__smsSubmit" type="submit" value="登录"
+                                            class="pass-button pass-button-submit"><span
+                                            class="tang-pass-sms-agreement">阅读并接受<a target="_blank"
+                                                                                    href="http://passport.baidu.com/static/passpc-account/html/protocal.html">《百度用户协议》</a></span><a
+                                            id="TANGRAM__PSP_8__sms_btn_back" class="pass-sms-link pass-sms-link-back">帐号密码登录</a>
+                                    </p></form>
+                            </div>
+                            <div id="TANGRAM__PSP_8__qrcode" class="clearfix tang-pass-qrcode tang-pass-login"
+                                 style="display:none;">
+                                <div class="tang-pass-qrcode-content" id="TANGRAM__PSP_8__qrcodeContent">
+                                    <div class="tang-pass-qrcode-init"><p class="tang-pass-qrcode-title">手机扫描，安全登录</p>
+
+                                        <div class="tang-pass-qrcode-imgWrapper"><img class="tang-pass-qrcode-img"
+                                                                                      src="https://ss0.bdstatic.com/5LMZfyabBhJ3otebn9fN2DJv/passApi/img/loading.gif">
+                                        </div>
+                                        <p class="tang-pass-qrcode-info">请使用<a href="http://xbox.m.baidu.com/mo/"
+                                                                               target="_blank">手机百度app</a>扫描登录</p></div>
+                                </div>
+                            </div>
+                            <div id="pass-phoenix-login" class="tang-pass-login-phoenix">
+                                <div class="pass-phoenix-title">可以使用以下方式登录<span class="pass-phoenix-note"></span></div>
+                                <div id="pass-phoenix-list-login"
+                                     class="pass-phoenix-list clearfix pass-phoenix-list-second"><a
+                                        class="pass-normal-btn" title="普通登录" style="display:none" data-type="normal">普通登录</a>
+
+                                    <div class="pass-phoenix-btn clearfix" id="pass_phoenix_btn">
+                                        <ul class="bd-acc-list">
+                                            <li class="bd-acc-qzone" data-dialog="1" data-acc="15" data-height="450"
+                                                data-width="750" id=""><a class="phoenix-btn-item" href="#"
+                                                                          title="QQ帐号">QQ帐号</a></li>
+                                            <li class="bd-acc-tsina" data-dialog="1" data-acc="2" data-height="669"
+                                                data-width="800" id=""><a class="phoenix-btn-item" href="#"
+                                                                          title="新浪微博">新浪微博</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div id="TANGRAM__PSP_8__pass_b2c" style="display:none;"></div>
+                            <div class="tang-pass-pop-login-changeWrapper" id="">
+                                <div class="tang-pass-pop-login-change tang-pass-pop-qrcodeLogin"
+                                     data-type="normal"></div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input name="password" type="password" class="form-control dx" placeholder="Password">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <span class="txt-alert"></span>
-                        <button type="button" class="btn btn-primary do-login">Log In</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</script>
-
-
-
+</div>

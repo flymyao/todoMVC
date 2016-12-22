@@ -40,6 +40,9 @@ function getTaskData() {
     var props = {};
     props.id = view.objId;
     props.name = d.first(view.el, "input[name='name']").value;
+    props.description = d.first(view.el, "textarea[name='description']").value;
+    var checkboxEl = d.first(view.el, "input[name='done']");
+    props.done = checkboxEl.checked;
     return props;
 }
 
@@ -47,5 +50,12 @@ function loadTask(task) {
     var view = this;
     if (task.name) {
         d.first(view.el, "input[name='name']").value = task.name;
+    }
+    if (task.description) {
+        d.first(view.el, "textarea[name='description']").value = task.description;
+    }
+
+    if (task.done) {
+        d.first(view.el, "input[name='done']").checked = true;
     }
 }

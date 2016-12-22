@@ -51,6 +51,7 @@ class BaseDao{
 				}
 			}
 		}
+		refreshDataFile(this._entity,this._cache);
 		return entity.id;
 	}
 
