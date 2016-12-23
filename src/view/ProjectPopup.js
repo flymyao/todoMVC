@@ -25,6 +25,7 @@ d.register("ProjectPopup", {
             var view = this;
             projectHub.pub("Project", "update", getProjectData.call(view));
             d.remove(view.el);
+            window.location.reload();
         },
         "click; .btn.cancel": function () {
             var view = this;
