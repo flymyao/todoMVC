@@ -43,5 +43,5 @@ templates.js
 # prevent the .map
 *.map
 
-#ignore data/ folder
-/server/data
+# ignore data/ folder
+server/data
