@@ -40,17 +40,11 @@ function getProjectData() {
     var view = this;
     var props = {};
     props.id = view.objId;
-    props.name = d.first(view.el, "input[name='name']").value;
+    props = Object.assign(props, d.pull(view.el));
     return props;
 }
 
 function loadProject(project) {
     var view = this;
-    if (project.name) {
-        d.first(view.el, "input[name='name']").value = project.name;
-    }
-
-    if (project.done) {
-        d.first(view.el, "input[name='done']").checked = true;
-    }
+    d.push(view.el,project);
 }
