@@ -46,5 +46,6 @@ function getTaskData() {
 function loadTask(task) {
     var view = this;
     task.done = task.done ? "true" : "false";
+    task.description = task.description ? task.description : "";
     d.push(view.el, task);
 }
